@@ -73,9 +73,7 @@ RUN apt-get update && \
     echo "" | vncpasswd -f > /etc/vncskel/.vnc/passwd && \
     chmod 0600 /etc/vncskel/.vnc/passwd && \
     useradd -U -m yoctouser && \
-    /usr/sbin/locale-gen en_US.UTF-8 && \
-    echo 'dash dash/sh boolean false' | debconf-set-selections && \
-    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
+    /usr/sbin/locale-gen en_US.UTF-8    
 
 # begin change from Synaptics
 # reason: use pre-packaged version above
